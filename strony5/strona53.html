@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Szablon testowy</title>
+<link rel="stylesheet" type="text/css" href="style/glowny.css">
+<script>
+    function dodaj(){
+        let a= document.getElementById("liczba1").value;
+        let b= document.getElementById("liczba2").value;
+        if(a=="" || b=="")document.getElementById("wynik").innerHTML="Nie podałeś liczb!!!";
+        else if(isNaN(a)||isNaN(b))document.getElementById("wynik").innerHTML="To muszą być liczby!!!";
+            else{
+            a=parseInt(a)
+            b=parseInt(b)
+            let wynik=a+b;
+            document.getElementById("wynik").innerHTML="Liczba 1: "+a+"<br> Liczba 2: "+b+"<br> Suma wynosi:"+wynik+"</br>"+a+"+"+b+"="+wynik;}
+    }
+            function odejmij(){
+        let a= document.getElementById("liczba1").value;
+        let b= document.getElementById("liczba2").value;
+        if(a=="" || b=="")document.getElementById("wynik").innerHTML="Nie podałeś liczb!!!";
+        else if(isNaN(a)||isNaN(b))document.getElementById("wynik").innerHTML="To muszą być liczby!!!";
+        else{
+            a=parseInt(a)
+            b=parseInt(b)
+            let wynik=a-b;
+            document.getElementById("wynik").innerHTML="Liczba 1: "+a+"<br> Liczba 2: "+b+"<br> Różnica wynosi:"+wynik+"</br>"+a+"-"+b+"="+wynik;
+    }}
+        function mnoz(){
+        let a= document.getElementById("liczba1").value;
+        let b= document.getElementById("liczba2").value;
+        if(a=="" || b=="")document.getElementById("wynik").innerHTML="Nie podałeś liczb!!!";
+        else if(isNaN(a)||isNaN(b))document.getElementById("wynik").innerHTML="To muszą być liczby!!!";
+        else{
+            a=parseInt(a)
+            b=parseInt(b)
+            let wynik=a*b;
+            document.getElementById("wynik").innerHTML="Liczba 1: "+a+"<br> Liczba 2: "+b+"<br> Iloczyn wynosi:"+wynik+"</br>"+a+"*"+b+"="+wynik;
+    }}
+            function dziel(){
+        let a= document.getElementById("liczba1").value;
+        let b= document.getElementById("liczba2").value;
+        if(a=="" || b=="")document.getElementById("wynik").innerHTML="Nie podałeś liczb!!!";
+        else if(isNaN(a)||isNaN(b))document.getElementById("wynik").innerHTML="To muszą być liczby!!!";
+        else if(b===0){document.getElementById("wynik").innerHTML="Nie dziel przez zero!!!"}
+        else{
+            a=parseInt(a)
+            b=parseInt(b)
+            let wynik=a/b;
+            document.getElementById("wynik").innerHTML="Liczba 1: "+a+"<br> Liczba 2: "+b+"<br> Iloraz wynosi:"+wynik+"</br>"+a+"/"+b+"="+wynik;
+    }}
+</script>
+</head>
+<body>
+<header id="gora">
+<h1>Szablon testowy</h1>
+</header>
+<section id="lewy">
+</section>
+<section id="srodek">
+<h1>Operacje Arytmetyczne</h1>
+<p>Podaj liczbe 1: <input type="text" id="liczba1"/></p>
+<p>Podaj liczbe 2: <input type="text" id="liczba2"/></p>
+<input type="button" value="suma" onclick="dodaj()"/>
+<input type="button" value="roznica" onclick="odejmij()"/>
+<input type="button" value="iloczyn" onclick="mnoz()"/>
+<input type="button" value="iloraz" onclick="dziel()"/>
+<h3 id="wynik"></h3>
+</section>
+<section id="prawy">
+</section>
+<footer id="stopka">
+<p>Autorem strony jest:...............</p>
+</footer>
+</body>
+</html>

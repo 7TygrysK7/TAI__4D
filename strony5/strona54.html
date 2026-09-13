@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Szablon testowy</title>
+<link rel="stylesheet" type="text/css" href="style_do_54/glowny.css">
+<script>
+    //szablon3
+    function pokaz(){
+        let wzrost=document.getElementById("wzrost").value;
+        let waga=document.getElementById("waga").value;
+        if (wzrost=="" || waga=="")document.getElementById("wynik").innerHTML="Musisz podać wszystkie dane!!!";
+        else if (isNaN(wzrost) || isNaN(waga))document.getElementById("wynik").innerHTML="Musisz podać liczby!!!";
+        else{
+            wzrost=parseInt(wzrost);
+            waga=parseInt(waga);
+            if(wzrost<140 || wzrost>240 || waga<40 || waga>300 ) document.getElementById("wynik").innerHTML="Niemożliwe dane!!! BMI tylko dla dorosłych osób!";
+            else{
+                document.getElementById("wynik").innerHTML="Twój wzrost: "+wzrost+"cm   Twoja waga: "+waga+"kg";
+                wzrost=wzrost/100;
+                let BMI=waga/(wzrost*wzrost);
+                BMI=parseInt(BMI);
+                document.getElementById("wynik2").innerHTML="Twoje BMI wynosi: "+BMI;
+                let info;
+                if(BMI<16) info="Wygłodzenie"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj1.jpg>"
+                if(BMI>=16 && BMI<17) info="Wychudzenie (spowodowane często przez ciężką chorobę lub anoreksję )"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj2.jpg>"
+                if(BMI>=17 && BMI<18.5)info="Niedowaga"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj2.jpg>"
+                if(BMI>=18.5 && BMI<25)info="Wartość prawidłowa"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj3.jpg/>"
+                if(BMI>=25 && BMI<30)info="Nadwaga"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj2.jpg>"
+                if(BMI>=30 && BMI<35)info="I stopień otyłości"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj2.jpg>"
+                if(BMI>=35 && BMI<40)info="II stopień otyłości ( otyłość kliniczna )"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj2.jpg>"
+                if(BMI>=40) info="III stopień otyłości ( otyłość skrajna )"
+                document.querySelector("#zdjecie").innerHTML="<img src='zdj1.jpg>"
+                document.getElementById("wynik3").innerHTML="Twój stan: "+info;
+            }
+        }
+    }
+
+</script>
+</head>
+<body>
+<header id="gora">
+<h1>Szablon testowy</h1>
+</header>
+<section id="lewy">
+</section>
+<section id="srodek">
+<h1>Sprawdź swój stan</h1>
+<p>Podaj wzrost w centymetrach: <input type="text" id="wzrost" class="pole"/></p>
+<p>Podaj mase w kilogramach: <input type="text" id="waga" class="pole"/></p>
+<input type="button" value="Sprawdź swój stan" onclick="pokaz()" class="przycisk"/>
+<h3 id="wynik"></h3>
+<h3 id="wynik2"></h3>
+<h3 id="wynik3" style='color: red'></h3>
+<p id="zdjecie"></p>
+</section>
+<section id="prawy">
+</section>
+<footer id="stopka">
+<p>Autorem strony jest:...............</p>
+</footer>
+</body>
+</html>

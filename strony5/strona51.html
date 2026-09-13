@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function pokaz(){
+        let imie=document.getElementById("im").value;
+        let nazwisko=document.getElementById("nazw").value;
+        if (imie == "" || nazwisko == ""){alert("Nie podałeś imienia lub nazwiska!!!")}
+        else{
+            document.getElementById("wynik1").textContent="Jesteś "+imie+" "+nazwisko;
+            document.querySelector("#wynik2").innerHTML="Witaj "+imie+" "+nazwisko;
+            document.querySelector("#zdj").innerHTML="<img src='zdj_do_51.jpg'>";
+        }
+    }
+</script>
+<body>
+
+    <p>Imie: <input type="text" id="im"/></p>
+    <p>Nazwisko: <input type="text" id="nazw"/></p>
+    <input type="button" value="Pokaż" onclick="pokaz()"/>
+    <h3 id="wynik1"></h3>
+    <h3 id="wynik2"></h3>
+    <p id="zdj"></p>
+</body>
+</html>
+
+
+
+
+
+    <!-- <header id="wynik1">
+        <h1>Szablon testowy</h1>
+    </header>
+    <header id="gora">
+        <h1>Szablon testowy</h1>
+    </header> -->

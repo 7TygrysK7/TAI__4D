@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title> Szablon testowy</title>
+<link rel="stylesheet" type="text/css" href="style/glowny.css">
+<script>
+    function pierw(){
+        let a=document.getElementById("liczba").value;
+        if(a=="")document.getElementById("wynik").innerHTML="Musisz podać liczbę!!!!!!!"
+        else{
+            document.getElementById("wynik").innerHTML="Pierwiastek z liczby "+a+" to "+Math.sqrt(a);
+        }
+        if(a<0)document.getElementById("wynik").innerHTML="Nie można pierwiastkować liczby ujemnej!!!!!!!"
+    }
+
+</script>
+</head>
+<body>
+<header id="gora">
+<h1>Szablon testowy</h1>
+</header>
+<section id="lewy">
+</section>
+<section id="srodek">
+<h1>Pierwiastkowanie</h1>
+<p>Podaj liczbe: <input type="number" id="liczba"/></p>
+<input type="button" value="Pierwiastkuj" onclick="pierw()"/>
+
+<h3 id="wynik"></h3>
+</section>
+<section id="prawy">
+</section>
+<footer id="stopka">
+<p>Autorem strony jest:...............</p>
+</footer>
+</body>
+</html>
